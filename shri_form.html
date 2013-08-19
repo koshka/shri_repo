@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=edge">
-		<title>Result</title>
-	</head>
-  <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+</head>
+<body>
     <h3 style="margin-bottom: 40px;">Заполните анкету</h3>
-    <form action="#" method="post" id="shri-form" onsubmit="">
+    <form action="#" name="shri-form" method="post" id="shri-form" onsubmit="return validate_form ( );">
       <div class="form">
         <div class="q">
           <div class="row" id="q1">
@@ -18,7 +20,7 @@
           <div class="row" id="a1">
             <div class="col1"></div>
             <div class="col2">
-              <textarea id="a1-text" style="background-color: transparent !important;
+              <textarea id="a1-text" name="a1-text" style="background-color: transparent !important;
                position: relative; margin-top: 20px; margin-bottom: 30px; border-color: #B0B0B0; line-height: normal;
                font-family:arial; font-size: 15.199999809265137px; white-space: pre-wrap;
                overflow: auto; width: 100%; resize: vertical;" rows="4" required></textarea>
@@ -258,23 +260,22 @@
           <div class="row" id="q14">
             <div class="col1"><em>Вопрос 14</em></div>
             <div class="col2">
-              <p>Вы — пилот грузового межгалактического корабля.
-                 Ваша работа — перевозка грузов с одной планету на другую.
+              Вы — пилот грузового межгалактического корабля.
+              <div id="trigger">[Подробнее]</div>
+              <div id="popout">
+              <p>Ваша работа — перевозка грузов с одной планету на другую.
                  Грузоподъемность вашего корабля ограничена, поэтому за
                  один рейс вы можете перевезти не более N кг полезного груза.
                  Ваш корабль умеет сообщать свое состояние
                  (местоположение и степень загруженности), а также летать
                  в любую точку пространства. Каждая планета может содержать
                  на себе груз, который можно взять. Также на каждой планете груз можно оставить .</p>
-              <p>Задание</p>
-              <p>Даны незавершенные интерфейсы корабля и планеты. Напишите недостающий код.</p>
-              <p>Полное условие задачи доступно на</p>
-              <p><a href="https://github.com/yandex-shri/introtask-space"
-                 target="_blank">https://github.com/yandex-shri/introtask-space</a></p>              
-              <p>В качестве ответа на вопрос пришлите ссылку на <a href="http://jsfiddle.net/"
-                 target="_blank">http://jsfiddle.net/</a> с вашим кодом
-                 или на ваш репозиторий на <a href="https://github.com/"
-                 target="_blank">https://github.com/</a>.</p>
+                <p>Задание</p>
+                <p>Даны незавершенные интерфейсы корабля и планеты. Напишите недостающий код.</p>
+                <p>Полное условие задачи доступно на</p>
+                <p><a href="https://github.com/yandex-shri/introtask-space"
+                   target="_blank">https://github.com/yandex-shri/introtask-space</a></p>
+              </div>
             </div>
           </div>
           <div class="row" id="a14">
@@ -292,27 +293,30 @@
           <div class="row" id="q15">
             <div class="col1"><em>Вопрос 15</em></div>
             <div class="col2">
-              <p>Сверстайте форму-анкету с нашими заданиями для кандидатов.
-              Страница должна работать в следующих браузерах: MSIE (8, 9, 10),
-              Google Chrome (26, 27), Firefox (20, 21), Opera (12.15, 12.14),
-              Яндекс.Браузер 1.5. По возможности используйте приёмы
-              безопасной деградации CSS. Страница должна содержать интерактив,
-              реализованный с помощью JS и jQuery. Это может быть:</p>
-              <ul>
-                <li>проверка полноты и правильности заполнения полей (где это возможно);</li>
-                <li>возможность свернуть и развернуть разделы (аккордеон);</li>
-                <li>индикатор заполнения анкеты;</li>
-                <li>что-нибудь ещё.</li>
-              </ul>
-              <p>Подумайте над тем, как эти данные будут отправляться на сервер.</p>
-              <p>Будет плюсом, если вы сверстаете страницу, используя БЭМ.</p>
-              <p>Дополнительные задания:</p>
-              <ol>
-                <li>Выполните задание про форму-анкету, используя один из классических шаблонизаторов: Handlebars, mustache, Dust, Jade и т.п.</li>
-                <li>Выполните задание про форму-анкету, используя один из экзотических шаблонизаторов: XSLT, YATE, BEMHTML и т.п.</li>
-              </ol>
-              <p>Разработку необходимо вести на <a href="https://github.com/" target="_blank">https://github.com/</a>.
-              В качестве ответа на вопрос пришлите ссылку на проект.</p>
+              Сверстайте форму-анкету с нашими заданиями для кандидатов.
+              <div id="trigger1">[Подробнее]</div>
+              <div id="popout1">
+                <p>Страница должна работать в следующих браузерах: MSIE (8, 9, 10),
+                Google Chrome (26, 27), Firefox (20, 21), Opera (12.15, 12.14),
+                Яндекс.Браузер 1.5. По возможности используйте приёмы
+                безопасной деградации CSS. Страница должна содержать интерактив,
+                реализованный с помощью JS и jQuery. Это может быть:</p>
+                <ul>
+                  <li>проверка полноты и правильности заполнения полей (где это возможно);</li>
+                  <li>возможность свернуть и развернуть разделы (аккордеон);</li>
+                  <li>индикатор заполнения анкеты;</li>
+                  <li>что-нибудь ещё.</li>
+                </ul>
+                <p>Подумайте над тем, как эти данные будут отправляться на сервер.</p>
+                <p>Будет плюсом, если вы сверстаете страницу, используя БЭМ.</p>
+                <p>Дополнительные задания:</p>
+                <ol>
+                  <li>Выполните задание про форму-анкету, используя один из классических шаблонизаторов: Handlebars, mustache, Dust, Jade и т.п.</li>
+                  <li>Выполните задание про форму-анкету, используя один из экзотических шаблонизаторов: XSLT, YATE, BEMHTML и т.п.</li>
+                </ol>
+                <p>Разработку необходимо вести на <a href="https://github.com/" target="_blank">https://github.com/</a>.
+                В качестве ответа на вопрос пришлите ссылку на проект.</p>
+              </div>
             </div>
           </div>
           <div class="row" id="a15">
@@ -341,7 +345,7 @@
           <div class="row" id="t_a2">
             <div class="col1">Ссылка на профиль<br/> в Моем Круге</div>
             <div class="col2">
-              <input name="moikrug" id="moikrug" type="url" style="width: 100%;">
+              <input name="moikrug" id="moikrug" type="url" style="width: 100%;" required>
             </div>
           </div>
         </div>
@@ -349,7 +353,7 @@
           <div class="row" id="t_a3">
             <div class="col1">Имя, Фамилия</div>
             <div class="col2">
-              <input name="name_surname" id="name_surname" type="text" style="width: 100%;">
+              <input name="name_surname" id="name_surname" type="text" style="width: 100%;" required>
             </div>
           </div>
         </div>
@@ -358,7 +362,7 @@
             <div class="col1">Телефон</div>
             <div class="col2">
               <span>
-              <input name="name_surname" id="name_surname" type="text" style="width: 100%;"></span>
+              <input name="name_surname" id="name_surname" type="text" style="width: 100%;" required></span>
               <p style="color:grey; margin-top: 2px; font-size: 12px">Пожалуйста, укажите код города</p>
             </div>
           </div>
@@ -398,7 +402,7 @@
                 <option value="другое">другое</option>
               </select>
               <div id="agree" style="margin-top: 20px">
-                <input type="checkbox" value="true" id="is_agree" name="is_agree">
+                <input type="checkbox" value="true" id="is_agree" name="is_agree" required>
                 <label><b>Я даю свое согласие на передачу в ООО «ЯНДЕКС» резюме и/или анкеты,
                 содержащих мои персональные данные, и согласен с тем,
                 что они будут храниться в ООО «ЯНДЕКС» в течение 5 лет
@@ -413,12 +417,12 @@
           <div class="row" style="background-color: #CECECE; height: 45px;">
             <div class="col1"></div>
             <div class="col2">
-              <input type="submit" hidefocus="true" style="width: 100px; height: 25px; margin-top: 10px;">
-              <input type="reset" hidefocus="true" style="width: 100px; height: 25px; margin-top: 10px;">
+              <input type="submit" name="send" hidefocus="true" value="Отправить" style="width: 50%; height: 25px; margin-top: 10px;">
+              <input type="reset" name="clear" hidefocus="true" value="Очистить" style="width: 100px; height: 25px; margin-top: 10px;">
             </div>
           </div>
         </div>
       </div>
     </form>
-  </body>
+</body>
 </html>
