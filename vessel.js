@@ -128,11 +128,11 @@ Planet.prototype.loadCargoTo = function (vessel, cargoWeight) {
   }
   if (this.availableAmountOfCargo === 0) {
     console.log("На планете нет грузов!");
-    return;
+    return "На планете нет грузов!";
   }
   if(vessel.getFreeSpace() === 0) {
     console.log("Корабль полон!");
-    return;
+    return "На планете нет грузов!";
   }
   // свободного места на корабле меньше, чем вес груза на планете
   // => загружается сколько возможно
@@ -141,18 +141,22 @@ Planet.prototype.loadCargoTo = function (vessel, cargoWeight) {
     if (vessel.getFreeSpace() < this.availableAmountOfCargo) {
       this.availableAmountOfCargo -= vessel.getFreeSpace();
       vessel.cargo = vessel.capacity;
+      return;
     } else { // с планеты выгружается весь груз
       vessel.cargo = this.availableAmountOfCargo;
       this.availableAmountOfCargo = 0;
+      return;
     }
   } else { // свободного места достаточно для груза
     // на планете достаточно груза
     if (cargoWeight <= this.availableAmountOfCargo) {
       vessel.cargo += cargoWeight;
       this.availableAmountOfCargo -= cargoWeight;
+      return;
     } else { // с планеты выгружается весь груз
       vessel.cargo += this.availableAmountOfCargo;
       this.availableAmountOfCargo = 0;
+      return;
     }
   }
 } 
@@ -173,7 +177,7 @@ Planet.prototype.unloadCargoFrom = function (vessel, cargoWeight) {
   }
   if (vessel.cargo === 0) {
     console.log("На корабле нет грузов!");
-    return;
+    return "На корабле нет грузов!";
   }
   // на корабле меньше груза, чем требуется выгрузить
   // выгружается весь
@@ -192,7 +196,7 @@ var vessel = new Vessel('Яндекс', [0,0], 1000);
 var planetA = new Planet('A', [0,0], 0);
 var planetB = new Planet('B', [100, 100], 5000);
 
-// Проверка текущего состояния
+// Тесты
 vessel.report(); // Корабль "Яндекс". Местоположение: 0,0. Занято: 0 из 1000т.
 planetA.report(); // Планета "A". Местоположене: 0,0. Грузов нет.
 planetB.report(); // Планета "B". Местоположене: 100,100. Доступно груза: 5000т.
