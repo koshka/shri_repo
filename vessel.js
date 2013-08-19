@@ -1,11 +1,11 @@
 /**
- * Создает экземпляр космического корабля.
+ * РЎРѕР·РґР°РµС‚ СЌРєР·РµРјРїР»СЏСЂ РєРѕСЃРјРёС‡РµСЃРєРѕРіРѕ РєРѕСЂР°Р±Р»СЏ.
  * @name Vessel
- * @param {String} name Название корабля.
- * @param {Number}[] position Местоположение корабля.
- * @param {String} Название планеты, если корабль на ней находится
- * @param {Number} capacity Грузоподъемность корабля.
- * @param {Number} cargo Все груза на борту
+ * @param {String} name РќР°Р·РІР°РЅРёРµ РєРѕСЂР°Р±Р»СЏ.
+ * @param {Number}[] position РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ РєРѕСЂР°Р±Р»СЏ.
+ * @param {String} РќР°Р·РІР°РЅРёРµ РїР»Р°РЅРµС‚С‹, РµСЃР»Рё РєРѕСЂР°Р±Р»СЊ РЅР° РЅРµР№ РЅР°С…РѕРґРёС‚СЃСЏ
+ * @param {Number} capacity Р“СЂСѓР·РѕРїРѕРґСЉРµРјРЅРѕСЃС‚СЊ РєРѕСЂР°Р±Р»СЏ.
+ * @param {Number} cargo Р’СЃРµ РіСЂСѓР·Р° РЅР° Р±РѕСЂС‚Сѓ
  */
 function Vessel(name, position, capacity) {
   this.name = name;
@@ -16,31 +16,31 @@ function Vessel(name, position, capacity) {
 }
 
 /**
- * Выводит текущее состояние корабля: имя, местоположение, количество груза на борту.
+ * Р’С‹РІРѕРґРёС‚ С‚РµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ РєРѕСЂР°Р±Р»СЏ: РёРјСЏ, РјРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ, РєРѕР»РёС‡РµСЃС‚РІРѕ РіСЂСѓР·Р° РЅР° Р±РѕСЂС‚Сѓ.
  * @example
- * vessel.report(); // Грузовой корабль. Местоположение: Земля. Товаров нет.
+ * vessel.report(); // Р“СЂСѓР·РѕРІРѕР№ РєРѕСЂР°Р±Р»СЊ. РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: Р—РµРјР»СЏ. РўРѕРІР°СЂРѕРІ РЅРµС‚.
  * @example
- * vesserl.report(); // Грузовой корабль. Местоположение: 50,20. Груз: 200т.
+ * vesserl.report(); // Р“СЂСѓР·РѕРІРѕР№ РєРѕСЂР°Р±Р»СЊ. РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: 50,20. Р“СЂСѓР·: 200С‚.
  * @name Vessel.report
  */
 Vessel.prototype.report = function () {
-  result = "Грузовой корабль \"" + this.name + "\". ";
+  result = "Р“СЂСѓР·РѕРІРѕР№ РєРѕСЂР°Р±Р»СЊ \"" + this.name + "\". ";
   if (this.positionPlanet !== "") {
-    result += "Местоположение: Планета \"" + this.positionPlanet + "\". ";
+    result += "РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: РџР»Р°РЅРµС‚Р° \"" + this.positionPlanet + "\". ";
   } else {
-    result += "Местоположение: " + this.position[0] + "," + this.position[1] + ". ";
+    result += "РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: " + this.position[0] + "," + this.position[1] + ". ";
   }
   if (this.cargo === 0) {
-    result += "Грузов нет. Доступно места: " + this.capacity + "т.";
+    result += "Р“СЂСѓР·РѕРІ РЅРµС‚. Р”РѕСЃС‚СѓРїРЅРѕ РјРµСЃС‚Р°: " + this.capacity + "С‚.";
   } else {
-    result += "Занято: " + this.cargo + " из " + this.capacity + "т." ;
+    result += "Р—Р°РЅСЏС‚Рѕ: " + this.cargo + " РёР· " + this.capacity + "С‚." ;
   }
   console.log(result);
   return result;
 }
 
 /**
- * Выводит количество свободного места на корабле.
+ * Р’С‹РІРѕРґРёС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРІРѕР±РѕРґРЅРѕРіРѕ РјРµСЃС‚Р° РЅР° РєРѕСЂР°Р±Р»Рµ.
  * @name Vessel.getFreeSpace
  */
 Vessel.prototype.getFreeSpace = function () {
@@ -48,7 +48,7 @@ Vessel.prototype.getFreeSpace = function () {
 }
 
 /**
- * Выводит количество занятого места на корабле.
+ * Р’С‹РІРѕРґРёС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РЅСЏС‚РѕРіРѕ РјРµСЃС‚Р° РЅР° РєРѕСЂР°Р±Р»Рµ.
  * @name Vessel.getOccupiedSpace
  */
 Vessel.prototype.getOccupiedSpace = function () {
@@ -56,12 +56,12 @@ Vessel.prototype.getOccupiedSpace = function () {
 }
 
 /**
- * Переносит корабль в указанную точку.
- * @param {Number}[]|Planet newPosition Новое местоположение корабля.
+ * РџРµСЂРµРЅРѕСЃРёС‚ РєРѕСЂР°Р±Р»СЊ РІ СѓРєР°Р·Р°РЅРЅСѓСЋ С‚РѕС‡РєСѓ.
+ * @param {Number}[]|Planet newPosition РќРѕРІРѕРµ РјРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ РєРѕСЂР°Р±Р»СЏ.
  * @example
  * vessel.flyTo([1,1]);
  * @example
- * var earth = new Planet('Земля', [1,1]);
+ * var earth = new Planet('Р—РµРјР»СЏ', [1,1]);
  * vessel.flyTo(earth);
  * @name Vessel.flyTo
  */
@@ -76,11 +76,11 @@ Vessel.prototype.flyTo = function (newPosition) {
 }
 
 /**
- * Создает экземпляр планеты.
+ * РЎРѕР·РґР°РµС‚ СЌРєР·РµРјРїР»СЏСЂ РїР»Р°РЅРµС‚С‹.
  * @name Planet
- * @param {String} name Название Планеты.
- * @param {Number}[] position Местоположение планеты.
- * @param {Number} availableAmountOfCargo Доступное количество груза.
+ * @param {String} name РќР°Р·РІР°РЅРёРµ РџР»Р°РЅРµС‚С‹.
+ * @param {Number}[] position РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ РїР»Р°РЅРµС‚С‹.
+ * @param {Number} availableAmountOfCargo Р”РѕСЃС‚СѓРїРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РіСЂСѓР·Р°.
  */
 function Planet(name, position, availableAmountOfCargo) {
   this.name = name;
@@ -89,23 +89,23 @@ function Planet(name, position, availableAmountOfCargo) {
 }
 
 /**
- * Выводит текущее состояние планеты: имя, местоположение, количество доступного груза.
+ * Р’С‹РІРѕРґРёС‚ С‚РµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ РїР»Р°РЅРµС‚С‹: РёРјСЏ, РјРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ, РєРѕР»РёС‡РµСЃС‚РІРѕ РґРѕСЃС‚СѓРїРЅРѕРіРѕ РіСЂСѓР·Р°.
  * @name Planet.report
  */
 Planet.prototype.report = function () {
-  var result = "Планета" + " \"" + this.name + "\"." + " Местоположение: "
+  var result = "РџР»Р°РЅРµС‚Р°" + " \"" + this.name + "\"." + " РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: "
   + this.position[0] + "," + this.position[1] + ".";
   if (this.availableAmountOfCargo) {
-    result += " Доступно груза: "+ this.availableAmountOfCargo + "т.";
+    result += " Р”РѕСЃС‚СѓРїРЅРѕ РіСЂСѓР·Р°: "+ this.availableAmountOfCargo + "С‚.";
   } else {
-    result += " Груза нет.";
+    result += " Р“СЂСѓР·Р° РЅРµС‚.";
   }
   console.log(result);
   return result;
 }
 
 /**
- * Возвращает доступное количество груза планеты.
+ * Р’РѕР·РІСЂР°С‰Р°РµС‚ РґРѕСЃС‚СѓРїРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РіСЂСѓР·Р° РїР»Р°РЅРµС‚С‹.
  * @name Vessel.getAvailableAmountOfCargo
  */
 Planet.prototype.getAvailableAmountOfCargo = function () {
@@ -113,44 +113,44 @@ Planet.prototype.getAvailableAmountOfCargo = function () {
 }
 
 /**
- * Загружает на корабль заданное количество груза.
+ * Р—Р°РіСЂСѓР¶Р°РµС‚ РЅР° РєРѕСЂР°Р±Р»СЊ Р·Р°РґР°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РіСЂСѓР·Р°.
  * 
- * Перед загрузкой корабль должен приземлиться на планету.
- * @param {Vessel} vessel Загружаемый корабль.
- * @param {Number} cargoWeight Вес загружаемого груза.
+ * РџРµСЂРµРґ Р·Р°РіСЂСѓР·РєРѕР№ РєРѕСЂР°Р±Р»СЊ РґРѕР»Р¶РµРЅ РїСЂРёР·РµРјР»РёС‚СЊСЃСЏ РЅР° РїР»Р°РЅРµС‚Сѓ.
+ * @param {Vessel} vessel Р—Р°РіСЂСѓР¶Р°РµРјС‹Р№ РєРѕСЂР°Р±Р»СЊ.
+ * @param {Number} cargoWeight Р’РµСЃ Р·Р°РіСЂСѓР¶Р°РµРјРѕРіРѕ РіСЂСѓР·Р°.
  * @name Vessel.loadCargoTo
  */
 Planet.prototype.loadCargoTo = function (vessel, cargoWeight) {
-  // если корабль еще не на планете, вызывается функция flyTo
-  // хотя это странно, что любая планета решает, куда лететь кораблю ;-)
+  // РµСЃР»Рё РєРѕСЂР°Р±Р»СЊ РµС‰Рµ РЅРµ РЅР° РїР»Р°РЅРµС‚Рµ, РІС‹Р·С‹РІР°РµС‚СЃСЏ С„СѓРЅРєС†РёСЏ flyTo
+  // С…РѕС‚СЏ СЌС‚Рѕ СЃС‚СЂР°РЅРЅРѕ, С‡С‚Рѕ Р»СЋР±Р°СЏ РїР»Р°РЅРµС‚Р° СЂРµС€Р°РµС‚, РєСѓРґР° Р»РµС‚РµС‚СЊ РєРѕСЂР°Р±Р»СЋ ;-)
   if (vessel.position[0] != this.position[0] || vessel.position[1] != this.position[1]) {
     vessel.flyTo(this);
   }
   if (this.availableAmountOfCargo === 0) {
-    console.log("На планете нет грузов!");
+    console.log("РќР° РїР»Р°РЅРµС‚Рµ РЅРµС‚ РіСЂСѓР·РѕРІ!");
     return;
   }
   if(vessel.getFreeSpace() === 0) {
-    console.log("Корабль полон!");
+    console.log("РљРѕСЂР°Р±Р»СЊ РїРѕР»РѕРЅ!");
     return;
   }
-  // свободного места на корабле меньше, чем вес груза на планете
-  // => загружается сколько возможно
+  // СЃРІРѕР±РѕРґРЅРѕРіРѕ РјРµСЃС‚Р° РЅР° РєРѕСЂР°Р±Р»Рµ РјРµРЅСЊС€Рµ, С‡РµРј РІРµСЃ РіСЂСѓР·Р° РЅР° РїР»Р°РЅРµС‚Рµ
+  // => Р·Р°РіСЂСѓР¶Р°РµС‚СЃСЏ СЃРєРѕР»СЊРєРѕ РІРѕР·РјРѕР¶РЅРѕ
   if (vessel.getFreeSpace() < cargoWeight) {
-    // на планете глуза достаточно для погрузки
+    // РЅР° РїР»Р°РЅРµС‚Рµ РіР»СѓР·Р° РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РґР»СЏ РїРѕРіСЂСѓР·РєРё
     if (vessel.getFreeSpace() < this.availableAmountOfCargo) {
       this.availableAmountOfCargo -= vessel.getFreeSpace();
       vessel.cargo = vessel.capacity;
-    } else { // с планеты выгружается весь груз
+    } else { // СЃ РїР»Р°РЅРµС‚С‹ РІС‹РіСЂСѓР¶Р°РµС‚СЃСЏ РІРµСЃСЊ РіСЂСѓР·
       vessel.cargo = this.availableAmountOfCargo;
       this.availableAmountOfCargo = 0;
     }
-  } else { // свободного места достаточно для груза
-    // на планете достаточно груза
+  } else { // СЃРІРѕР±РѕРґРЅРѕРіРѕ РјРµСЃС‚Р° РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РґР»СЏ РіСЂСѓР·Р°
+    // РЅР° РїР»Р°РЅРµС‚Рµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РіСЂСѓР·Р°
     if (cargoWeight <= this.availableAmountOfCargo) {
       vessel.cargo += cargoWeight;
       this.availableAmountOfCargo -= cargoWeight;
-    } else { // с планеты выгружается весь груз
+    } else { // СЃ РїР»Р°РЅРµС‚С‹ РІС‹РіСЂСѓР¶Р°РµС‚СЃСЏ РІРµСЃСЊ РіСЂСѓР·
       vessel.cargo += this.availableAmountOfCargo;
       this.availableAmountOfCargo = 0;
     }
@@ -158,25 +158,25 @@ Planet.prototype.loadCargoTo = function (vessel, cargoWeight) {
 } 
 
 /**
- * Выгружает с корабля заданное количество груза.
+ * Р’С‹РіСЂСѓР¶Р°РµС‚ СЃ РєРѕСЂР°Р±Р»СЏ Р·Р°РґР°РЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РіСЂСѓР·Р°.
  * 
- * Перед выгрузкой корабль должен приземлиться на планету.
- * @param {Vessel} vessel Разгружаемый корабль.
- * @param {Number} cargoWeight Вес выгружаемого груза.
+ * РџРµСЂРµРґ РІС‹РіСЂСѓР·РєРѕР№ РєРѕСЂР°Р±Р»СЊ РґРѕР»Р¶РµРЅ РїСЂРёР·РµРјР»РёС‚СЊСЃСЏ РЅР° РїР»Р°РЅРµС‚Сѓ.
+ * @param {Vessel} vessel Р Р°Р·РіСЂСѓР¶Р°РµРјС‹Р№ РєРѕСЂР°Р±Р»СЊ.
+ * @param {Number} cargoWeight Р’РµСЃ РІС‹РіСЂСѓР¶Р°РµРјРѕРіРѕ РіСЂСѓР·Р°.
  * @name Vessel.unloadCargoFrom
  */
 Planet.prototype.unloadCargoFrom = function (vessel, cargoWeight) {
   //
-  // если корабль еще не на планете, вызывается функция flyTo
+  // РµСЃР»Рё РєРѕСЂР°Р±Р»СЊ РµС‰Рµ РЅРµ РЅР° РїР»Р°РЅРµС‚Рµ, РІС‹Р·С‹РІР°РµС‚СЃСЏ С„СѓРЅРєС†РёСЏ flyTo
   if (vessel.position[0] != this.position[0] || vessel.position[1] != this.position[1]) {
     vessel.flyTo(this);
   }
   if (vessel.cargo === 0) {
-    console.log("На корабле нет грузов!");
+    console.log("РќР° РєРѕСЂР°Р±Р»Рµ РЅРµС‚ РіСЂСѓР·РѕРІ!");
     return;
   }
-  // на корабле меньше груза, чем требуется выгрузить
-  // выгружается весь
+  // РЅР° РєРѕСЂР°Р±Р»Рµ РјРµРЅСЊС€Рµ РіСЂСѓР·Р°, С‡РµРј С‚СЂРµР±СѓРµС‚СЃСЏ РІС‹РіСЂСѓР·РёС‚СЊ
+  // РІС‹РіСЂСѓР¶Р°РµС‚СЃСЏ РІРµСЃСЊ
   if (vessel.cargo < cargoWeight) {
     this.availableAmountOfCargo += vessel.cargo;
     vessel.cargo = 0;
@@ -188,24 +188,24 @@ Planet.prototype.unloadCargoFrom = function (vessel, cargoWeight) {
   }
 }
 
-var vessel = new Vessel('Яндекс', [0,0], 1000);
+var vessel = new Vessel('РЇРЅРґРµРєСЃ', [0,0], 1000);
 var planetA = new Planet('A', [0,0], 0);
 var planetB = new Planet('B', [100, 100], 5000);
 
-// Проверка текущего состояния
-vessel.report(); // Корабль "Яндекс". Местоположение: 0,0. Занято: 0 из 1000т.
-planetA.report(); // Планета "A". Местоположене: 0,0. Грузов нет.
-planetB.report(); // Планета "B". Местоположене: 100,100. Доступно груза: 5000т.
+// РџСЂРѕРІРµСЂРєР° С‚РµРєСѓС‰РµРіРѕ СЃРѕСЃС‚РѕСЏРЅРёСЏ
+vessel.report(); // РљРѕСЂР°Р±Р»СЊ "РЇРЅРґРµРєСЃ". РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: 0,0. Р—Р°РЅСЏС‚Рѕ: 0 РёР· 1000С‚.
+planetA.report(); // РџР»Р°РЅРµС‚Р° "A". РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРµ: 0,0. Р“СЂСѓР·РѕРІ РЅРµС‚.
+planetB.report(); // РџР»Р°РЅРµС‚Р° "B". РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРµ: 100,100. Р”РѕСЃС‚СѓРїРЅРѕ РіСЂСѓР·Р°: 5000С‚.
 
 vessel.flyTo(planetB);
 planetB.loadCargoTo(vessel, 1000);
-vessel.report(); // Корабль "Яндекс". Местоположение: 100,100. Занято: 1000 из 1000т.
+vessel.report(); // РљРѕСЂР°Р±Р»СЊ "РЇРЅРґРµРєСЃ". РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: 100,100. Р—Р°РЅСЏС‚Рѕ: 1000 РёР· 1000С‚.
 
 vessel.flyTo(planetA);
 planetA.unloadCargoFrom(vessel, 500);
-vessel.report(); // Корабль "Яндекс". Местоположение: 0,0. Занято: 500 из 1000т.
-planetA.report(); // Планета "A". Местоположение: 0,0. Доступно груза: 500т.
-planetB.report(); // Планета "B". Местоположение: 100,100. Доступно груза: 4000т.
+vessel.report(); // РљРѕСЂР°Р±Р»СЊ "РЇРЅРґРµРєСЃ". РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: 0,0. Р—Р°РЅСЏС‚Рѕ: 500 РёР· 1000С‚.
+planetA.report(); // РџР»Р°РЅРµС‚Р° "A". РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: 0,0. Р”РѕСЃС‚СѓРїРЅРѕ РіСЂСѓР·Р°: 500С‚.
+planetB.report(); // РџР»Р°РЅРµС‚Р° "B". РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ: 100,100. Р”РѕСЃС‚СѓРїРЅРѕ РіСЂСѓР·Р°: 4000С‚.
 vessel.report();
 planetB.unloadCargoFrom(vessel, 600);
 vessel.report();
