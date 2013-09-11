@@ -10,9 +10,9 @@ if [[ $1 = "1" ]]
           continue
         fi
         # The file has already been changed.
-        if grep --quiet '\<title\>.* »“.*' $file
+        if grep --quiet '\<title\>.*–ö–ò–¢.*' $file
         then
-          sed -i.backup -e '/<title>.*/s/ »“/ÿ–»/g' $file
+          sed -i.backup -e '/<title>.*/s/–ö–ò–¢/–®–†–ò/g' $file
         fi                                                  
       done
 # $1 == 0 - for rollback
